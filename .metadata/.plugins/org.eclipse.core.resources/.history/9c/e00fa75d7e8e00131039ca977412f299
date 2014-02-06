@@ -1,0 +1,40 @@
+package fr.istic.tpjpa.jpa;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class ElectronicDevice extends Equipement{
+	private int id;
+	private Long conso;
+	
+	public ElectronicDevice(){}
+
+	public ElectronicDevice(int id,Long conso) {
+		super(id,conso);
+	}
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Long getConso() {
+		return conso;
+	}
+
+	public void setConso(Long conso) {
+		this.conso = conso;
+	}
+	
+	@Override
+	public String toString() {
+		return "ElectronicDevice [id=" + id + ", conso=" + conso + "]";
+	}
+}

@@ -1,0 +1,40 @@
+package fr.istic.tpjpa.jpa;
+
+import javax.persistence.*;
+
+@Entity
+public class Heater{
+	
+	private int id;
+	private Long conso;
+	
+	public Heater(){}
+
+	public Heater(int id,Long conso) {
+		super(id, conso);
+	}
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Long getConso() {
+		return conso;
+	}
+
+	public void setConso(Long conso) {
+		this.conso = conso;
+	}
+	
+	@Override
+	public String toString() {
+		return "Heater [id=" + id + ", conso=" + conso + "]";
+	}
+}
+
