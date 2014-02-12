@@ -1,0 +1,40 @@
+package fr.istic.tpjpa.jpa;
+
+import javax.persistence.*;
+
+@Entity
+public class Peripherique{
+	
+	private int id;
+	private Long conso;
+	
+	public Peripherique(){}
+
+	public Peripherique(Long conso) {
+		this.conso=conso;
+	}
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Long getConso() {
+		return conso;
+	}
+
+	public void setConso(Long conso) {
+		this.conso = conso;
+	}
+	
+	@Override
+	public String toString() {
+		return "Heater [id=" + id + ", conso=" + conso + "]";
+	}
+}
+

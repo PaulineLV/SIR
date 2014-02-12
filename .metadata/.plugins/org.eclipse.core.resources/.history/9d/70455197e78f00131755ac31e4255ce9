@@ -1,0 +1,52 @@
+package fr.istic.tpjpa.jpa;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class ElectronicDevice{
+	private int id;
+	private Long conso;
+	private Person person;
+	
+	public ElectronicDevice(){}
+
+	public ElectronicDevice(Long conso, Person person) {
+		this.conso=conso;
+		this.person=person;
+	}
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Long getConso() {
+		return conso;
+	}
+
+	public void setConso(Long conso) {
+		this.conso = conso;
+	}
+	
+	@ManyToOne
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+	
+	@Override
+	public String toString() {
+		return "ElectronicDevice [id=" + id + ", conso=" + conso + "]";
+	}
+}
